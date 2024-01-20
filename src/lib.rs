@@ -125,6 +125,12 @@ cfg_if! {
 
         mod xous;
         pub use xous::*;
+    } else if #[cfg(target_os = "theseus")] {
+	mod fixed_width_ints;
+        pub use fixed_width_ints::*;
+
+	mod theseus;
+	pub use theseus::*;
     } else {
         // non-supported targets: empty...
     }
